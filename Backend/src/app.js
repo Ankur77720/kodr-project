@@ -13,6 +13,4 @@ app.use('/v1/api/users', userRoutes);
 
 
 
-
-
 module.exports = app

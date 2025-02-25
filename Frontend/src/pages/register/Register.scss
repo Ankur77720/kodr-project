@@ -1,0 +1,49 @@
+.form-view {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+    form {
+        min-width: 20rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: flex-start;
+        width: 100%;
+
+        input {
+            width: 100%;
+            padding: 0.7em 1em;
+            border-radius: 0.5em;
+
+            border: 1px solid #ccc;
+            outline: none;
+        }
+    }
+
+    button {
+        padding: 0.7em 1em;
+        border-radius: 0.5em;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+}
