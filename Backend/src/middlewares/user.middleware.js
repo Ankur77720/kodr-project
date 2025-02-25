@@ -5,7 +5,7 @@ const userModel = require("../models/user.model")
 
 module.exports.registerValidation = [
     body('email').not().isEmpty().withMessage('Email is required')
-        .not().isEmail().withMessage('Email is not valid'),
+     .isEmail().withMessage('Email is not valid'),
     body('password').not().isEmpty().withMessage('Password is required')
         .isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
     body('username').not().isEmpty().withMessage('Username is required')
@@ -25,7 +25,7 @@ module.exports.registerValidation = [
 module.exports.loginValidation = [
 
     body('email').not().isEmpty().withMessage('Email is required')
-        .not().isEmail().withMessage('Email is not valid'),
+       .isEmail().withMessage('Email is not valid'),
     body('password').not().isEmpty().withMessage('Password is required')
         .isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
     (req, res, next) => {
