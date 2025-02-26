@@ -1,0 +1,22 @@
+main {
+  width: 100%;
+}
+main nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7em 1.5em;
+}
+main nav button {
+  padding: 0.7em 1em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main nav button:hover {
+  background-color: #0056b3;
+}

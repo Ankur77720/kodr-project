@@ -1,0 +1,21 @@
+main {
+  width: 100%;
+}
+main .create-post-view {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .create-post-view form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+main .create-post-view form .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
