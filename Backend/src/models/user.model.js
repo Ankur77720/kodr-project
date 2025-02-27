@@ -39,7 +39,7 @@ userSchema.methods.generateToken = function () {
     return jwt.sign({ id: this._id }, config.JWT_SECRET, { expiresIn: '1d' })
 }
 
-userSchema.statics.verifyToken = function () {
+userSchema.statics.verifyToken = function (token) {
     return jwt.verify(token, config.JWT_SECRET)
 }
 

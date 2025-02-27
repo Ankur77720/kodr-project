@@ -17,18 +17,18 @@ const CreatePost = () => {
             headers: {
                 authorization: "bearer " + localStorage.getItem('token')
             }
+        }).then(response => {
+            console.log(response.data)
         })
 
     }
 
 
     return (
-
         <main>
-
             <section className='create-post-view' >
                 <h1>Create Post</h1>
-                <form>
+                <form onSubmit={handleSubmit} >
                     <div className="input-group">
                         <label htmlFor="media">Enter media</label>
                         <input
@@ -38,7 +38,6 @@ const CreatePost = () => {
                             accept='image/*'
                         />
                     </div>
-
                     <div className="input-group">
                         <label htmlFor="caption">Enter caption</label>
                         <textarea

@@ -5,7 +5,7 @@ const userModel = require("../models/user.model")
 
 module.exports.registerValidation = [
     body('email').not().isEmpty().withMessage('Email is required')
-     .isEmail().withMessage('Email is not valid'),
+        .isEmail().withMessage('Email is not valid'),
     body('password').not().isEmpty().withMessage('Password is required')
         .isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
     body('username').not().isEmpty().withMessage('Username is required')
@@ -25,7 +25,7 @@ module.exports.registerValidation = [
 module.exports.loginValidation = [
 
     body('email').not().isEmpty().withMessage('Email is required')
-       .isEmail().withMessage('Email is not valid'),
+        .isEmail().withMessage('Email is not valid'),
     body('password').not().isEmpty().withMessage('Password is required')
         .isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
     (req, res, next) => {
@@ -39,7 +39,13 @@ module.exports.loginValidation = [
 
 
 module.exports.authUser = async (req, res, next) => {
-    const token = req.cookies.token || req.headers.authorization?.split(' ')[ 1 ];
+
+
+
+    const token = req.cookies?.token || req.headers.authorization?.split(' ')[ 1 ];
+
+
+
 
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized' });
@@ -47,9 +53,13 @@ module.exports.authUser = async (req, res, next) => {
 
     try {
         const decoded = userModel.verifyToken(token);
+
+
+
         req.user = await userModel.findById(decoded.id);
         next();
     } catch (err) {
+        console.log(err)
         res.status(401).json({ message: 'Unauthorized' });
     }
 
