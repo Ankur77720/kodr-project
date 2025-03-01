@@ -1,4 +1,5 @@
 const userModel = require("../models/user.model")
+const postModel = require("../models/post.model")
 
 module.exports.register = async (req, res) => {
 
@@ -56,5 +57,14 @@ module.exports.login = async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
+}
+
+module.exports.feedController = async (req, res) => {
+
+    const posts = await postModel.find().lean()
+    /* user.save() */
+
+    res.status(200).json({ posts })
+
 }
 

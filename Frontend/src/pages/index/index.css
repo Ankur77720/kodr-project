@@ -20,3 +20,20 @@ main nav button {
 main nav button:hover {
   background-color: #0056b3;
 }
+main .feed-view {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .feed-view .posts {
+  width: 23rem;
+}
+main .feed-view .posts .post {
+  width: 20rem;
+}
+main .feed-view .posts .post img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

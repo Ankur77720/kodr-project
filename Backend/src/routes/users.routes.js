@@ -8,6 +8,8 @@ router.post('/register', userMiddleware.registerValidation, userController.regis
 
 router.post('/login', userMiddleware.loginValidation, userController.login)
 
+/* /v1/api/users/feed [get] {protected} */
+router.get('/feed', userMiddleware.authUser,userController.feedController)
 
 
 module.exports = router

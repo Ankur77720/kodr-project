@@ -19,11 +19,16 @@ router.post('/create',
             isPublished: true,
             isPrivateFile: false
         })
-        req.body.image = file
+        req.body.image = file /* 
+        {
+        id: '5f7b1b7b7f7b1f7b1',
+        url: 'https://ik.imagekit.io/your_image
+        thumbnail: 'https://ik.imagekit.io/your_thumbnail'  
+        }
+         */
         next()
     },
     postController.createPost
-
 )
 
 

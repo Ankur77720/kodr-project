@@ -1,17 +1,17 @@
 import React from 'react'
 import "./createpost.css"
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const CreatePost = () => {
 
+    const navigate = useNavigate()
+
 
     function handleSubmit(event) {
-
         event.preventDefault()
 
-
         const formData = new FormData(event.target)
-
 
         axios.post("http://localhost:3000/v1/api/posts/create", formData, {
             headers: {
@@ -19,6 +19,7 @@ const CreatePost = () => {
             }
         }).then(response => {
             console.log(response.data)
+            navigate('/')
         })
 
     }

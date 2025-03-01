@@ -24,4 +24,30 @@ main {
             }
         }
     }
+
+    .feed-view {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+
+
+        .posts {
+            width: 23rem;
+
+
+            .post {
+
+                width: 20rem;
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 4/5;
+                    object-fit: cover;
+                }
+
+            }
+
+        }
+    }
 }
